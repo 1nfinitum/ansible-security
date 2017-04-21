@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Mykhaylo Kolesnik
+  description: Role for applying security configurations.
+  license: MIT
+
+  min_ansible_version: 2.2
+
+  platforms:
+    - name: Ubuntu
+      versions:
+      - xenial
+  galaxy_tags:
+    - system
+    - security

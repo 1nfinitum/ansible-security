@@ -2,5 +2,8 @@
 - hosts: localhost
   remote_user: root
   gather_facts: false
+  vars:
+    security_fail2ban_enabled: true
+    security_enable_ssh_config: true
   roles:
     - role_under_test

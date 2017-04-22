@@ -3,18 +3,17 @@ Ansible Role: Security
 
 Role for applying security configurations for Ubuntu Xenial.
 
-Requirements
-------------
-This role requires only root access for accomplishing its operations, so either run it in a playbook with a global `become: yes`, or invoke the role in your playbook like:
-
-    - hosts: localhost
-    roles:
-      - role: 1nfinitum.ssh-users
-
 Role Variables
 --------------
-
-The following variables are obtaining basic SSH security configurations to keep your server safer. By default these configurations is turned `off`, to prevent critical changes for existing servers, so if you want to use it - set `enable_ssh_config` to `true` in your `vars` or vars file you use.
+```
+security_fail2ban_enabled: '' # Boolean
+```
+Wether to install/enable fail2ban. By default it's turned off, to enable set it to `true`, note that it will work only on Debian type machine, while it uses `apt` package for installation. You might not want to use fail2ban if you're already using some other service for login and intrusion detection. By default it's set to `false`.
+### SSH configurations
+```
+security_enable_ssh_config: '' # Boolean
+```
+Whether to enable SSH configurations or not. The following configurations would accomplish only if it will be set to `true`. By default it's set to `false`.
 ```
 ssh_port: 22
 ```
@@ -25,10 +24,6 @@ ssh_permit_root_login: "no"
 ssh_use_dns: "no"
 ```
 Security settings for SSH authentication. It's best to leave these set to "no", but there are times (especially during initial server configuration or when you don't have key-based authentication in place) when one or all may be safely set to 'yes'.
-```
-fail2ban_enabled: false
-```
-Wether to install/enable fail2ban. By default it's turned off, to enable set it to `true`, note that it will work only on Debian type machine, while it uses `apt` package for installation. You might not want to use fail2ban if you're already using some other service for login and intrusion detection.
 
 Example Playbook
 ----------------

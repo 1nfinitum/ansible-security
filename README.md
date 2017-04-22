@@ -1,5 +1,6 @@
 Ansible Role: Security
 =========
+[![Build Status](https://travis-ci.org/1nfinitum/ansible-security.svg?branch=master)](https://travis-ci.org/1nfinitum/ansible-security)
 
 Role for applying security configurations for Ubuntu Xenial.
 

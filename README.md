@@ -2,7 +2,7 @@ Ansible Role: Security
 =========
 [![Build Status](https://travis-ci.org/1nfinitum/ansible-security.svg?branch=master)](https://travis-ci.org/1nfinitum/ansible-security)
 
-Role for applying security configurations for Ubuntu Xenial.
+Role for applying security configurations for Ubuntu Xenial including security autoupdates.
 
 Role Variables
 --------------
@@ -10,6 +10,10 @@ Role Variables
 security_fail2ban_enabled: '' # Boolean
 ```
 Wether to install/enable fail2ban. By default it's turned off, to enable set it to `true`, note that it will work only on Debian type machine, while it uses `apt` package for installation. You might not want to use fail2ban if you're already using some other service for login and intrusion detection. By default it's set to `false`.
+```
+security_autoupdate_blacklist: []
+```
+List of packages that should not be automatically updated during automatic security updates.
 ### SSH configurations
 ```
 security_enable_ssh_config: '' # Boolean
@@ -28,7 +32,6 @@ Security settings for SSH authentication. It's best to leave these set to "no", 
 
 Example Playbook
 ----------------
-
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
@@ -37,10 +40,8 @@ Including an example of how to use your role (for instance, with variables passe
 
 License
 -------
-
 MIT
 
 Author Information
 ------------------
-
 This role was created in 2017 by [Mykhaylo Kolesnik](http://github.com/1nfinitum).

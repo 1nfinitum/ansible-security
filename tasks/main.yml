@@ -29,5 +29,22 @@
   apt:
     name: fail2ban
     update_cache: yes
-    state: present
+    cache_valid_time: 43200
   when: security_fail2ban_enabled
+
+- name: Installing unattended upgrades package.
+  apt: 
+    name: unattended-upgrades
+    update_cache: yes
+    cache_valid_time: 43200
+
+- name: Copying unattended-upgrades configurations.
+  template:
+    src: "{{ item }}.j2"
+    dest: "/etc/apt/apt.conf.d/{{ item }}"
+    owner: root
+    group: root
+    mode: 0644
+  with_items:
+    - 10periodic
+    - 50unattended-upgrades

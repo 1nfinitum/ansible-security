@@ -6,7 +6,7 @@ env:
 
 script:
   # Download test shim.
-  - wget -O ${PWD}/tests/test.sh https://gist.github.com/1nfinitum/16748392b3a23b78467514f0f0d857a5/raw/
+  - wget -O ${PWD}/tests/test.sh https://gist.github.com/tenequm/16748392b3a23b78467514f0f0d857a5/raw/
   - chmod +x ${PWD}/tests/test.sh
 
   # Run tests.

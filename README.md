@@ -1,6 +1,6 @@
 Ansible Role: Security
 =========
-[![Build Status](https://travis-ci.org/1nfinitum/ansible-security.svg?branch=master)](https://travis-ci.org/1nfinitum/ansible-security)
+[![Build Status](https://travis-ci.org/tenequm/ansible-security.svg?branch=master)](https://travis-ci.org/tenequm/ansible-security)
 
 Role for applying security configurations for Ubuntu Xenial including security autoupdates.
 
@@ -36,7 +36,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: 1nfinitum.security, x: 42 }
+         - { role: tenequm.security, x: 42 }
 
 License
 -------
@@ -44,4 +44,4 @@ MIT
 
 Author Information
 ------------------
-This role was created in 2017 by [Mykhaylo Kolesnik](http://github.com/1nfinitum).
+This role was created in 2017 by [Mykhaylo Kolesnik](http://github.com/tenequm).

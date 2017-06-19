@@ -32,6 +32,9 @@
     cache_valid_time: 43200
   when: security_fail2ban_enabled
 
+- name: Ensure fail2ban is running and enabled on boot.
+  service: name=fail2ban state=started enabled=yes
+
 - name: Installing unattended upgrades package.
   apt: 
     name: unattended-upgrades
@@ -48,3 +51,6 @@
   with_items:
     - 10periodic
     - 50unattended-upgrades
+
+- name: Ensure unattended-upgrades are installed and enabled on boot.
+  service: name=unattended-upgrades state=started enabled=yes
